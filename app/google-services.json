@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "634163830998",
+    "firebase_url": "https://villedemontpellierapp.firebaseio.com",
+    "project_id": "villedemontpellierapp",
+    "storage_bucket": "villedemontpellierapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:634163830998:android:8127e70c2bfb4c65",
+        "android_client_info": {
+          "package_name": "neoexa.com.villedemontpellier"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "634163830998-bfjfuq3oknr3479uluj74egcev062ijg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "neoexa.com.villedemontpellier",
+            "certificate_hash": "596a52d59e5ed6c390b541db75aa94c2cf334420"
+          }
+        },
+        {
+          "client_id": "634163830998-7mmcl4u1vi5jb23t46gfg3uiuo1jqda7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdPYwX_6SjWOgnnCepSxFVyvqNfMmm4m8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "634163830998-7mmcl4u1vi5jb23t46gfg3uiuo1jqda7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
