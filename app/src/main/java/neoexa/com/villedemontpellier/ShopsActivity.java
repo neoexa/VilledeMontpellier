@@ -3,7 +3,10 @@ package neoexa.com.villedemontpellier;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatImageButton;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Filter;
 import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -56,9 +59,35 @@ public class ShopsActivity extends AppCompatActivity {
         shops.add( new Shop("100 Sushis", "49 Avenue du Professeur Grasset, 34090 Montpellier","43.626250, 3.866285", Shop.shopCat.food));
         adapter = new ShopAdapter(this, shops);
         shopsListView.setAdapter(adapter);
+
+
         //Evenements
-        shopsListView.setOnItemClickListener((parent, view, position, id) -> {
-            Toast.makeText(ShopsActivity.this,"click to item" + position, Toast.LENGTH_SHORT).show();
+        //shopsListView.setOnItemClickListener((parent, view, position, id) -> {
+        //    Toast.makeText(ShopsActivity.this,"click to item" + position, Toast.LENGTH_SHORT).show();
+        //});
+
+        shopsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(ShopsActivity.this, adapter.getItem(position).getName(), Toast.LENGTH_SHORT).show();
+            }
         });
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+
+
+
+
     }
 }
