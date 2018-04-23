@@ -6,7 +6,6 @@ public class Shop {
         food,
         market,
         hotel,
-        entertainment,
         finance;
     }
     public String name;

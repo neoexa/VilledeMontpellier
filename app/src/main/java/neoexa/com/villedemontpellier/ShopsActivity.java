@@ -21,11 +21,11 @@ import neoexa.com.villedemontpellier.Model.ShopAdapter;
 
 public class ShopsActivity extends AppCompatActivity {
     private SearchView searchView;
-    private ImageButton foodFilter;
-    private ImageButton marketFilter;
-    private ImageButton hotelFilter;
-    private ImageButton financeFilter;
-    private ImageButton favoriteFilter;
+    private ImageButton foodFilterBtn;
+    private ImageButton marketFilterBtn;
+    private ImageButton hotelFilterBtn;
+    private ImageButton financeFilterBtn;
+    private ImageButton favoriteFilterBtn;
 
 
     private ListView shopsListView ;
@@ -39,11 +39,11 @@ public class ShopsActivity extends AppCompatActivity {
 
         //References
         searchView = (SearchView) findViewById(R.id.search_bar);
-        foodFilter = (ImageButton) findViewById(R.id.food_filter_btn);
-        marketFilter = (ImageButton) findViewById(R.id.market_filter_btn);
-        hotelFilter = (ImageButton) findViewById(R.id.hotel_filter_btn);
-        financeFilter = (ImageButton) findViewById(R.id.finance_filter_btn);
-        favoriteFilter = (ImageButton) findViewById(R.id.favorite_filter_btn);
+        foodFilterBtn = (ImageButton) findViewById(R.id.food_filter_btn);
+        marketFilterBtn = (ImageButton) findViewById(R.id.market_filter_btn);
+        hotelFilterBtn = (ImageButton) findViewById(R.id.hotel_filter_btn);
+        financeFilterBtn = (ImageButton) findViewById(R.id.finance_filter_btn);
+        favoriteFilterBtn = (ImageButton) findViewById(R.id.favorite_filter_btn);
         shopsListView = (ListView) findViewById(R.id.shopsListView);
 
         //Adapteur
@@ -60,12 +60,7 @@ public class ShopsActivity extends AppCompatActivity {
         adapter = new ShopAdapter(this, shops);
         shopsListView.setAdapter(adapter);
 
-
-        //Evenements
-        //shopsListView.setOnItemClickListener((parent, view, position, id) -> {
-        //    Toast.makeText(ShopsActivity.this,"click to item" + position, Toast.LENGTH_SHORT).show();
-        //});
-
+        // Events
         shopsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -85,6 +80,14 @@ public class ShopsActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        foodFilterBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                adapter.filterRestaurant();
+            }
+        });
+
 
 
 
