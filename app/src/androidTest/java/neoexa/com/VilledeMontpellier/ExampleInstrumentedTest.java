@@ -1,4 +1,4 @@
-package neoexa.com.villedemontpellier;
+package neoexa.com.VilledeMontpellier;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -1,4 +1,4 @@
-package neoexa.com.villedemontpellier;
+package neoexa.com.VilledeMontpellier;
 
 import org.junit.Test;
 

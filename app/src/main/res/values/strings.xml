@@ -1,21 +1,14 @@
 <resources>
 
-    <string name="app_name">Ville de Montpellier</string>
+    <string name="app_name">NeoCity</string>
     <string name="current_location">Montpellier</string>
 
     <!-- HOME ACTIVITY STRINGS -->
     <string name="profile_fr">Profil</string>
-    <string name="profile_desc_fr">Consulter votre profil</string>
     <string name="shops_fr">Magasins</string>
-    <string name="shops_desc_fr">Magasins et boutiques ...</string>
     <string name="calendar_fr">Agenda</string>
-    <string name="calendar_desc_fr">Agenda culturel et sorties </string>
-    <string name="communities_fr">Mes cercles</string>
-    <string name="communities_desc_fr">Des gens comme vous !!</string>
-    <string name="practicalinfo_fr">Pratique</string>
-    <string name="practicalinfo_desc_fr">Trafic et alertes ...</string>
-    <string name="news_fr">Actualité</string>
-    <string name="news_desc_fr">L\'actualité sur Montpellier</string>
+    <string name="communities_fr">Cercles</string>ng>
+    <string name="news_fr">Admin</string>
 
     <!-- REGISTER ACTIVITY STRINGS -->
 

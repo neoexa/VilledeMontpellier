@@ -1,16 +1,20 @@
-package neoexa.com.villedemontpellier.Model;
+package neoexa.com.VilledeMontpellier.Model;
+
+import java.util.ArrayList;
 
 public class User {
     String username ;
     String email;
     String telephone ;
-    String address ;
+    String address;
+    ArrayList<Shop> favorites;
 
-    public User(String username, String email, String telephone, String address) {
+    public User(String username, String email, String telephone, String address, ArrayList<Shop> favorites) {
         this.username = username;
         this.email = email;
         this.telephone = telephone;
         this.address = address;
+        this.favorites= favorites;
     }
 
     public String getUsername() {

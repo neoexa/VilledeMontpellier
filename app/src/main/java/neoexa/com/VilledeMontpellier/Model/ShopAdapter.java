@@ -1,4 +1,4 @@
-package neoexa.com.villedemontpellier.Model;
+package neoexa.com.VilledeMontpellier.Model;
 
 import android.app.Activity;
 import android.content.Context;
@@ -16,7 +16,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import neoexa.com.villedemontpellier.R;
+import neoexa.com.VilledeMontpellier.R;
 
 public class ShopAdapter extends BaseAdapter implements Filterable {
     Activity context;
@@ -114,13 +114,27 @@ public class ShopAdapter extends BaseAdapter implements Filterable {
         filterCategory("food");
     }
 
+    public void filterMarket() {
+        filterCategory("market");
+    }
+
+    public void filterHotel() {
+        filterCategory("hotel");
+    }
+
+    public void filterFinance() {
+        filterCategory("finance");
+    }
+
+    public void filterFavorite() {
+    }
+
     private void filterCategory(String category){
         final ArrayList<Shop> list = originalShops;
 
         int count = list.size();
         filteredShops = new ArrayList<Shop>(count);
         Shop filterableShop;
-        Log.d(getClass().getName(), "valuedufhsdkjfsdf = " + count);
         for (int i = 0; i < count; i++) {
             filterableShop = list.get(i);
             if (filterableShop.getCategory().toString().equals(category)) {

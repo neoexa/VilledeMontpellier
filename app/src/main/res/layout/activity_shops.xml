@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="neoexa.com.villedemontpellier.ShopsActivity">
+    tools:context="neoexa.com.VilledeMontpellier.ShopsActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,21 +20,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                android:visibility="visible" />
 
         </RelativeLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_margin="15dp"
-            android:background="@color/colorYellow" />
+            android:layout_margin="10dp"
+            android:background="@color/secondaryColor" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/noFilter_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:background="@android:color/transparent"
+                app:srcCompat="@drawable/all" />
 
             <ImageButton
                 android:id="@+id/food_filter_btn"
@@ -81,7 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_margin="15dp"
-            android:background="@color/colorYellow" />
+            android:background="@color/secondaryColor" />
 
         <ListView
             android:id="@+id/shopsListView"

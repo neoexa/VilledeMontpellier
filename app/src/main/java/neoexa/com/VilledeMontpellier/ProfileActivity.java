@@ -1,4 +1,4 @@
-package neoexa.com.villedemontpellier;
+package neoexa.com.VilledeMontpellier;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,11 +9,14 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import neoexa.com.villedemontpellier.Model.User;
+import neoexa.com.VilledeMontpellier.Model.Shop;
+import neoexa.com.VilledeMontpellier.Model.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import com.google.firebase.database.*;
+
+import java.util.ArrayList;
 
 public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView usernameTextView;
@@ -79,7 +82,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         if (authUser != null) {
             String email = authUser.getEmail();
             String uid = authUser.getUid();
-            User user = new User(username, email, telephone, address);
+            User user = new User(username, email, telephone, address, new ArrayList<Shop>());
             mDatabase.child("users").child(uid).setValue(user);
             Intent toProfileIntent = new Intent (ProfileActivity.this, HomeActivity.class);
             ProfileActivity.this.startActivity(toProfileIntent);
@@ -88,7 +91,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             Toast.makeText(ProfileActivity.this, "Erreur utilisateur non connecté !",
                     Toast.LENGTH_SHORT).show();
         }
-
     }
 
     @Override

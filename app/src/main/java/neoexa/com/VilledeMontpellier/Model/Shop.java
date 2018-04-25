@@ -1,4 +1,4 @@
-package neoexa.com.villedemontpellier.Model;
+package neoexa.com.VilledeMontpellier.Model;
 
 
 public class Shop {

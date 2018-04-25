@@ -1,4 +1,4 @@
-package neoexa.com.villedemontpellier;
+package neoexa.com.VilledeMontpellier;
 
 
 import android.support.v7.app.AppCompatActivity;

@@ -1,4 +1,4 @@
-package neoexa.com.villedemontpellier.Model;
+package neoexa.com.VilledeMontpellier.Model;
 
 import com.google.firebase.database.Exclude;
 import com.google.firebase.database.IgnoreExtraProperties;

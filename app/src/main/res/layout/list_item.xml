@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants">
 
     <ImageButton
         android:id="@+id/favoriteImageButton"
@@ -13,7 +14,10 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:background="@android:color/transparent"
-        app:srcCompat="@drawable/favoriteoff" />
+        app:srcCompat="@drawable/favoriteoff"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
 
     <TextView
         android:id="@+id/textViewName"
@@ -23,7 +27,10 @@
         android:text="name"
         android:textSize="16sp"
         android:layout_alignTop="@+id/favoriteImageButton"
-        android:layout_toEndOf="@+id/favoriteImageButton" />
+        android:layout_toEndOf="@+id/favoriteImageButton"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
 
     <TextView
         android:id="@+id/textViewAdress"
@@ -32,6 +39,9 @@
         android:layout_alignBottom="@+id/favoriteImageButton"
         android:layout_alignStart="@+id/textViewName"
         android:text="address"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
 
 </RelativeLayout>
