@@ -14,5 +14,4 @@
     </style>
     <style name="NeoTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
     <style name="NeoTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
-
 </resources>

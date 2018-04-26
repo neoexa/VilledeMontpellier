@@ -82,7 +82,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         if (authUser != null) {
             String email = authUser.getEmail();
             String uid = authUser.getUid();
-            User user = new User(username, email, telephone, address, new ArrayList<Shop>());
+            User user = new User(username, email, telephone, address);
             mDatabase.child("users").child(uid).setValue(user);
             Intent toProfileIntent = new Intent (ProfileActivity.this, HomeActivity.class);
             ProfileActivity.this.startActivity(toProfileIntent);

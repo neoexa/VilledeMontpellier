@@ -7,14 +7,12 @@ public class User {
     String email;
     String telephone ;
     String address;
-    ArrayList<Shop> favorites;
 
-    public User(String username, String email, String telephone, String address, ArrayList<Shop> favorites) {
+    public User(String username, String email, String telephone, String address) {
         this.username = username;
         this.email = email;
         this.telephone = telephone;
         this.address = address;
-        this.favorites= favorites;
     }
 
     public String getUsername() {

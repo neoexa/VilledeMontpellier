@@ -2,22 +2,16 @@ package neoexa.com.VilledeMontpellier.Model;
 
 
 public class Shop {
-    public enum shopCat {
-        food,
-        market,
-        hotel,
-        finance;
-    }
+    public String userId;
     public String name;
     public String address;
-    public String gps;
-    public shopCat category ;
+    public String category;
 
 
-    public Shop (String n, String a, String g, shopCat s){
+    public Shop (String id,String n, String a, String s){
+        this.userId = id;
         this.name = n;
         this.address = a;
-        this.gps = g;
         this.category = s;
     }
 
@@ -29,27 +23,19 @@ public class Shop {
         this.name = name;
     }
 
-    public String getAdress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAdress(String adress) {
-        this.address = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getGps() {
-        return gps;
-    }
-
-    public void setGps(String gps) {
-        this.gps = gps;
-    }
-
-    public shopCat getCategory() {
+    public String getCategory() {
         return category;
     }
 
-    public void setShopType(shopCat category) {
+    public void setCategory(String category) {
         this.category = category;
     }
 
