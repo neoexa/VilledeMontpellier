@@ -21,8 +21,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -45,6 +48,9 @@ public class ShopsActivity extends AppCompatActivity {
     private ArrayList<Shop> shops = new ArrayList<>() ;
     private ShopAdapter adapter;
 
+    private DatabaseReference mDatabase;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,10 +66,9 @@ public class ShopsActivity extends AppCompatActivity {
         favoriteFilterBtn = (ImageButton) findViewById(R.id.favorite_filter_btn);
         shopsListView = (ListView) findViewById(R.id.shopsListView);
 
+        //Database
+        mDatabase = FirebaseDatabase.getInstance().getReference("shops");
 
-        //Adapteur
-        adapter = new ShopAdapter(this, shops);
-        shopsListView.setAdapter(adapter);
 
         // Events
         shopsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -136,9 +141,27 @@ public class ShopsActivity extends AppCompatActivity {
             }
         });
 
-        //Functions
+        mDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
 
+                shops.clear();
 
+                for (DataSnapshot shopsSnapshot: dataSnapshot.getChildren()){
+                    Shop retrievedShop = shopsSnapshot.getValue(Shop.class);
+                    shops.add(retrievedShop);
+                }
 
-    }
+                //Adapteur
+                adapter = new ShopAdapter(ShopsActivity.this, shops);
+                shopsListView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        }
 }

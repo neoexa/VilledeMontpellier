@@ -53,10 +53,10 @@ public class ShopAdapter extends BaseAdapter implements Filterable {
         View itemView = convertView;
         itemView = (itemView == null) ? inflater.inflate(R.layout.list_item, null): itemView;
         TextView textViewName = (TextView) itemView.findViewById(R.id.textViewName);
-        TextView textViewAdress = (TextView) itemView.findViewById(R.id.textViewAdress);
+        TextView textViewAddress = (TextView) itemView.findViewById(R.id.textViewAdress);
         Shop selectedShop = filteredShops.get(position);
         textViewName.setText(selectedShop.name);
-        textViewAdress.setText(selectedShop.address);
+        textViewAddress.setText(selectedShop.address);
         return itemView;
     }
 

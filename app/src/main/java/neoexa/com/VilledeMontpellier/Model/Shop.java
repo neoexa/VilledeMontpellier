@@ -7,8 +7,10 @@ public class Shop {
     public String address;
     public String category;
 
+    public Shop() {
+    }
 
-    public Shop (String id,String n, String a, String s){
+    public Shop (String id, String n, String a, String s){
         this.userId = id;
         this.name = n;
         this.address = a;
