@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="neoexa.com.VilledeMontpellier.ShopsActivity">
-    <LinearLayout
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -41,40 +46,40 @@
                 android:id="@+id/noFilter_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
                 android:background="@android:color/transparent"
+                android:padding="5dp"
                 app:srcCompat="@drawable/all" />
 
             <ImageButton
                 android:id="@+id/food_filter_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
                 android:background="@android:color/transparent"
+                android:padding="5dp"
                 android:src="@drawable/restaurant" />
 
             <ImageButton
                 android:id="@+id/market_filter_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
                 android:background="@android:color/transparent"
+                android:padding="5dp"
                 android:src="@drawable/boutique" />
 
             <ImageButton
                 android:id="@+id/hotel_filter_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
                 android:background="@android:color/transparent"
+                android:padding="5dp"
                 android:src="@drawable/hotel" />
 
             <ImageButton
                 android:id="@+id/finance_filter_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
                 android:background="@android:color/transparent"
+                android:padding="5dp"
                 android:src="@drawable/bank" />
 
             <ImageButton
@@ -82,7 +87,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
+                android:padding="5dp"
                 android:src="@drawable/favoriteon" />
+
+            <ImageButton
+                android:id="@+id/nearby_filter_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:padding="5dp"
+                android:src="@drawable/nearby" />
 
         </LinearLayout>
 
@@ -95,8 +109,8 @@
         <ListView
             android:id="@+id/shopsListView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </ListView>
+            android:layout_height="457dp"></ListView>
 
-    </LinearLayout>
-</android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+    </FrameLayout>
+</FrameLayout>

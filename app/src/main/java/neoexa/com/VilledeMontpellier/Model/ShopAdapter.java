@@ -2,6 +2,9 @@ package neoexa.com.VilledeMontpellier.Model;
 
 import android.app.Activity;
 import android.content.Context;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,22 +16,27 @@ import android.widget.Filterable;
 import android.widget.SearchView;
 import android.widget.TextView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import neoexa.com.VilledeMontpellier.R;
+import neoexa.com.VilledeMontpellier.ShopsActivity;
 
 public class ShopAdapter extends BaseAdapter implements Filterable {
     Activity context;
     ArrayList<Shop> filteredShops;
     ArrayList<Shop> originalShops;
+    ArrayList<Shop> favoriteShops;
     private  static LayoutInflater inflater = null;
 
 
-    public ShopAdapter (Activity context, ArrayList<Shop> shops){
+    public ShopAdapter (Activity context, ArrayList<Shop> shops, ArrayList<Shop> favoriteShops){
         this.context = context;
         this.filteredShops = shops;
         this.originalShops = shops;
+        this.favoriteShops = favoriteShops;
         inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -126,9 +134,6 @@ public class ShopAdapter extends BaseAdapter implements Filterable {
         filterCategory("finance");
     }
 
-    public void filterFavorite() {
-    }
-
     private void filterCategory(String category){
         final ArrayList<Shop> list = originalShops;
 
@@ -144,5 +149,39 @@ public class ShopAdapter extends BaseAdapter implements Filterable {
         }
         notifyDataSetChanged();
         Log.e("Values", filteredShops.toString());
+    }
+
+    public void filterFavorite(){
+        filteredShops = favoriteShops;
+        notifyDataSetChanged();
+    }
+
+    public void filterNearby(Location currentLoc){
+
+        final ArrayList<Shop> list = originalShops;
+        int count = list.size();
+        filteredShops = new ArrayList<Shop>(count);
+        Shop sh;
+
+        Geocoder coder = new Geocoder(this.context);
+        List<Address> address;
+
+        for (int i = 0; i < count; i++) {
+            try {
+                sh = list.get(i);
+                address = coder.getFromLocationName(sh.getAddress(),1);
+                Location loc = new Location("");
+                loc.setAltitude(address.get(0).getLatitude());
+                loc.setLongitude(address.get(0).getLongitude());
+                float d = currentLoc.distanceTo(loc); //mètres
+                if (d < 500){
+                    filteredShops.add(sh);
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        notifyDataSetChanged();
     }
 }

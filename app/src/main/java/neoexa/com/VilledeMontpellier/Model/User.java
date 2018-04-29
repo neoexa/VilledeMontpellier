@@ -3,10 +3,14 @@ package neoexa.com.VilledeMontpellier.Model;
 import java.util.ArrayList;
 
 public class User {
-    String username ;
-    String email;
-    String telephone ;
-    String address;
+    public String username ;
+    public String email;
+    public String telephone ;
+    public String address;
+
+    public User() {
+        // Default constructor required for calls to DataSnapshot.getValue(User.class)
+    }
 
     public User(String username, String email, String telephone, String address) {
         this.username = username;
