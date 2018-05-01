@@ -5,7 +5,6 @@ import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,16 +12,13 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
-import android.widget.SearchView;
 import android.widget.TextView;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 import neoexa.com.VilledeMontpellier.R;
-import neoexa.com.VilledeMontpellier.ShopsActivity;
 
 public class ShopAdapter extends BaseAdapter implements Filterable {
     Activity context;
@@ -59,7 +55,7 @@ public class ShopAdapter extends BaseAdapter implements Filterable {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View itemView = convertView;
-        itemView = (itemView == null) ? inflater.inflate(R.layout.list_item, null): itemView;
+        itemView = (itemView == null) ? inflater.inflate(R.layout.item_shop, null): itemView;
         TextView textViewName = (TextView) itemView.findViewById(R.id.textViewName);
         TextView textViewAddress = (TextView) itemView.findViewById(R.id.textViewAdress);
         Shop selectedShop = filteredShops.get(position);

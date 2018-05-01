@@ -63,7 +63,6 @@ public class GroupsActivity extends BaseActivity {
         findViewById(R.id.fab_new_post).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(GroupsActivity.this, "Click", Toast.LENGTH_SHORT).show();
                 Intent toProfileIntent = new Intent (GroupsActivity.this, NewPostActivity.class);
                 GroupsActivity.this.startActivity(toProfileIntent);
             }

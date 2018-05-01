@@ -16,20 +16,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/NeoTheme">
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".HomeActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity" />
+        <activity android:name=".HomeActivity" />
         <activity android:name=".GroupsActivity" />
         <activity android:name=".CalendarActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".AdminActivity" />
         <activity android:name=".ShopsActivity" />
         <activity android:name=".AddShopActivity" />
+        <activity android:name=".NewPostActivity" />
+        <activity android:name=".PostDetailActivity" />
+        <activity android:name=".AddEventActivity"></activity>
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package neoexa.com.VilledeMontpellier;
 
 
+import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,7 +18,9 @@ import android.content.Intent;
 
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
@@ -25,7 +28,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText editTextEmail;
     private EditText editTextPassword;
 
+
+    private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
+
+    private ProgressDialog pd;
 
 
     @Override
@@ -41,10 +48,24 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         findViewById(R.id.loginButton).setOnClickListener(this);
         findViewById(R.id.textViewNewuser).setOnClickListener(this);
 
-        //Service Auth
+        //Service Auth & DB
         mAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        pd = new ProgressDialog(LoginActivity.this);
+
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // Check auth on Activity start
+        if (mAuth.getCurrentUser() != null) {
+            // Go to HomeActivity
+            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+        }
+    }
 
 
 
@@ -73,21 +94,24 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
     // connexion
-    private void signIn(String email, String password) {
+    private void signIn() {
         if (!validateInput()) {
             return;
         }
+
+        pd.show();
+        String email = editTextEmail.getText().toString();
+        String password = editTextPassword.getText().toString();
+
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        pd.hide();
                         if (task.isSuccessful()) {
-                            // Connexion Réussi
-                            FirebaseUser user = mAuth.getCurrentUser();
                             Intent toHomeIntent = new Intent (LoginActivity.this, HomeActivity.class);
                             LoginActivity.this.startActivity(toHomeIntent);
                         } else {
-                            // fail!!
                             Toast.makeText(LoginActivity.this, "Connexion échoué.",
                                     Toast.LENGTH_SHORT).show();
                         }
@@ -96,15 +120,41 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     }
 
+    //New user
+    private void signUp() {
+        if (!validateInput()) {
+            return;
+        }
+
+        pd.show();
+        String email = editTextEmail.getText().toString();
+        String password = editTextPassword.getText().toString();
+
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        pd.hide();
+
+                        if (task.isSuccessful()) {
+                            Intent toProfileIntent = new Intent (LoginActivity.this, ProfileActivity.class);
+                            LoginActivity.this.startActivity(toProfileIntent);
+                        } else {
+                            Toast.makeText(LoginActivity.this, "Sign Up Failed",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
+
 
     @Override
     public void onClick(View v) {
         int i = v.getId();
         if (i == R.id.loginButton) {
-            signIn(editTextEmail.getText().toString(), editTextPassword.getText().toString());
+            signIn();
         } else if (i == R.id.textViewNewuser){
-            Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
-            LoginActivity.this.startActivity(registerIntent);
+            signUp();
         }
 
     }
