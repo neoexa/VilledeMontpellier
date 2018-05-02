@@ -8,10 +8,13 @@
         <item name="colorAccent">@color/secondaryColor</item>
         <item name="android:navigationBarColor">@color/primaryDarkColor</item>
     </style>
+
     <style name="NeoTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-    <style name="NeoTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
-    <style name="NeoTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="NeoTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="NeoTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

@@ -1,6 +1,10 @@
 package neoexa.com.VilledeMontpellier.Model;
 
+import com.google.firebase.database.Exclude;
+
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Event {
     public String uid;
@@ -9,6 +13,8 @@ public class Event {
     public String address;
     public Date begin;
     public Date end;
+    public int peopleCount = 0;
+    public Map<String, Boolean> people = new HashMap<>();
 
     public Event() {
     }
@@ -20,6 +26,21 @@ public class Event {
         this.address = address;
         this.begin = begin;
         this.end = end;
+    }
+
+    @Exclude
+    public Map<String, Object> toMap() {
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("uid", uid);
+        result.put("title", title);
+        result.put("body", body);
+        result.put("address", address);
+        result.put("begin", begin);
+        result.put("end", end);
+        result.put("peopleCount", peopleCount);
+        result.put("people", people);
+
+        return result;
     }
 
     public String getUid() {
@@ -44,6 +65,14 @@ public class Event {
 
     public void setBody(String body) {
         this.body = body;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public Date getBegin() {

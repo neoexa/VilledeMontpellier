@@ -5,35 +5,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="neoexa.com.VilledeMontpellier.ProfileActivity"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:orientation="vertical">
 
     <EditText
         android:id="@+id/usernameTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Username" />
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="5dp"
+        android:hint="Pseudo"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/telephoneTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:text="Téléphone" />
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="5dp"
+        android:hint="Téléphone"
+        android:inputType="phone" />
 
 
     <EditText
         android:id="@+id/addressTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPostalAddress"
-        android:text="Adresse" />
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="5dp"
+        android:hint="Adresse"
+        android:inputType="textPostalAddress" />
 
     <Button
         android:id="@+id/profileBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Valider" />
+        android:layout_marginStart="270dp"
+        android:layout_marginTop="20dp"
+        android:text="Valider"
+        android:textColor="@color/primaryDarkColor"
+        tools:background="@color/primaryLightColor" />
 
 </LinearLayout>

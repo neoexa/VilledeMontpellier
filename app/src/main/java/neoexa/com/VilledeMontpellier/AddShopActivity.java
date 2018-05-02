@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,13 +18,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import fr.ganfra.materialspinner.MaterialSpinner;
 import neoexa.com.VilledeMontpellier.Model.Shop;
-import neoexa.com.VilledeMontpellier.Model.User;
 
 public class AddShopActivity extends AppCompatActivity implements View.OnClickListener {
 

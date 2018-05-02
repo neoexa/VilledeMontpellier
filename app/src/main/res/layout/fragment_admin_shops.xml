@@ -1,0 +1,19 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="neoexa.com.VilledeMontpellier.AdminActivity$PlaceholderFragment">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_add_shop"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="80dp"
+        android:layout_marginEnd="20dp"
+        android:src="@android:drawable/ic_menu_edit" />
+
+</RelativeLayout>

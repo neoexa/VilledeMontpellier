@@ -5,9 +5,9 @@
 
     <!-- HOME ACTIVITY STRINGS -->
     <string name="profile_fr">Profil</string>
-    <string name="shops_fr">Magasins</string>
+    <string name="shops_fr">Commerces</string>
     <string name="calendar_fr">Agenda</string>
-    <string name="communities_fr">Cercles</string>ng>
+    <string name="communities_fr">Forum</string>ng>
     <string name="news_fr">Admin</string>
 
     <!-- REGISTER ACTIVITY STRINGS -->
@@ -32,23 +32,28 @@
     <string name="title_favorites">Favoris</string>
     <string name="title_nearby">Proximité</string>
 
-    <!-- SOCIAL DESCRIPTION STRINGS -->
     <string name="action_settings">Paramètres</string>
-    <string name="menu_login">Log in</string>
-    <string name="menu_logout">Log out</string>
-    <string name="login_label">Se connecter</string>
+    <string name="menu_login">Log In</string>
+    <string name="menu_logout">Log Out</string>
+    <string name="login_label">Se Connecter</string>
     <string name="email_label">Email</string>
-    <string name="password_label">Mot de passe</string>
+    <string name="password_label">Mot De Passe</string>
     <string name="send_text">Envoyer</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec condimentum ante, quis mattis mi. Proin ut rhoncus libero, ac euismod neque. Ut suscipit, enim a facilisis consequat, orci lacus venenatis orci, at ultricies orci nulla sed ex. In condimentum viverra velit, eget feugiat libero imperdiet vel. Aenean pretium, lectus vitae bibendum bibendum, diam turpis convallis eros, quis tristique leo sapien at ipsum. Praesent eu odio id nulla lobortis auctor. Donec eget dolor eget nisl euismod commodo vel a lacus. Quisque ut justo vitae urna pharetra accumsan. Etiam dignissim neque iaculis mauris viverra, blandit rhoncus odio porttitor. Phasellus nibh arcu.</string>
     <string name="title_sign_in">Bienvenue</string>
     <string name="sign_up">S\'enregistrer</string>
     <string name="hint_password">Mot de passe</string>
     <string name="hint_email">Email</string>
-    <string name="sign_in">Se connecter</string>
+    <string name="sign_in">Se Connecter</string>
     <string name="heading_recent">Récentes</string>
     <string name="heading_my_posts">Mes Publications</string>
     <string name="heading_my_top_posts">Top Publications</string>
+    <string name="title_activity_ggg">ggg</string>
+    <string name="tab_text_1">Commerces</string>
+    <string name="tab_text_2">Evenements</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_testtttt">testtttt</string>
+    <string name="tab_text_3">Tab 3</string>
 
 
 </resources>

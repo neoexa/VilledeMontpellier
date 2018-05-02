@@ -27,12 +27,19 @@
         <activity android:name=".GroupsActivity" />
         <activity android:name=".CalendarActivity" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".AdminActivity" />
         <activity android:name=".ShopsActivity" />
         <activity android:name=".AddShopActivity" />
         <activity android:name=".NewPostActivity" />
         <activity android:name=".PostDetailActivity" />
-        <activity android:name=".AddEventActivity"></activity>
+        <activity android:name=".AddEventActivity" />
+        <activity
+            android:name=".AdminActivity"
+            android:label="@string/title_activity_ggg"
+            android:theme="@style/NeoTheme.NoActionBar" />
+        <activity
+            android:name=".testtttt"
+            android:label="@string/title_activity_testtttt"
+            android:theme="@style/NeoTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
