@@ -34,12 +34,7 @@
         <activity android:name=".AddEventActivity" />
         <activity
             android:name=".AdminActivity"
-            android:label="@string/title_activity_ggg"
             android:theme="@style/NeoTheme.NoActionBar" />
-        <activity
-            android:name=".testtttt"
-            android:label="@string/title_activity_testtttt"
-            android:theme="@style/NeoTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

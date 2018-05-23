@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context="neoexa.com.VilledeMontpellier.AdminActivity$PlaceholderFragment">
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/admin_events_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:clipToPadding="false"
+        android:padding="5dp"
+        android:scrollbars="vertical"
+        tools:listitem="@layout/item_event" />
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_add_event"
         android:layout_width="65dp"
